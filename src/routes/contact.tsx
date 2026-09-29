@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState, type FormEvent } from 'react';
-import { ArrowUpRight, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { ArrowUpRight, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { pageHead } from '@/components/Seo';
 import { PageHero, BookingButton, ClosingCTA, WhatsAppIcon, whatsappUrl, directionsUrl } from '@/components/Site';

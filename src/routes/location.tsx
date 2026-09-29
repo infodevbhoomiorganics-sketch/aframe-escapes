@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { pageHead } from '@/components/Seo';
 import { PageHero, AccessNote, SectionIntro, ClosingCTA, directionsUrl } from '@/components/Site';
 import landscape from '@/assets/valley-view.webp';

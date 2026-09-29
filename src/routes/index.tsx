@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { ArrowRight, Wifi, Mountain, Coffee, Sun, MapPin, Heart, Home as HomeIcon } from 'lucide-react';
+import { ArrowRight, Wifi, Mountain, Coffee } from 'lucide-react';
 import { pageHead } from '@/components/Seo';
 import { exterior, sunrise, BookingButton, SectionIntro, SplitSection, AccessNote, ClosingCTA } from '@/components/Site';
 import landscape from '@/assets/mountain-landscape.webp';

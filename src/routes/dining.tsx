@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Coffee, Utensils, Heart, ConciergeBell } from 'lucide-react';
+import { Coffee, Utensils, ConciergeBell } from 'lucide-react';
 import { pageHead } from '@/components/Seo';
 import { PageHero, SectionIntro, SplitSection, ClosingCTA } from '@/components/Site';
 import balcony from '@/assets/balcony-morning.webp';

@@ -1,0 +1,3 @@
+- [x] Inspect and optimize the nine supplied property photographs.
+- [ ] Build nine distinct pages with shared navigation, booking, access information, and metadata.
+- [ ] Verify mobile and desktop rendering and enquiry links.

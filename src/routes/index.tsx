@@ -1,24 +1,19 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { ArrowRight, Wifi, Mountain, Coffee } from 'lucide-react';
+import { pageHead } from '@/components/Seo';
+import { exterior, sunrise, BookingButton, SectionIntro, SplitSection, AccessNote, ClosingCTA } from '@/components/Site';
+import landscape from '@/assets/mountain-landscape.webp';
+import bedroom from '@/assets/ground-floor-bedroom.webp';
+import balcony from '@/assets/balcony-view.webp';
+import attic from '@/assets/attic-bedroom.webp';
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+const title = 'Dreams Villa A-Frame Cabin | Mountain Hideaway Near Jibhi';
+const description = 'Stay at Dreams Villa A-Frame Cabin in Bahu near Jibhi, Himachal Pradesh. A private wooden mountain cabin with panoramic valley views, balcony and home-style hospitality.';
+export const Route = createFileRoute('/')({ head: () => ({ ...pageHead(title, description, '/'), scripts: [{ type: 'application/ld+json', children: JSON.stringify({ '@context': 'https://schema.org', '@type': 'LodgingBusiness', name: 'Dreams Villa A-Frame Cabin', description, telephone: '+91 85447 30160', address: { '@type': 'PostalAddress', streetAddress: 'Bahu (Lushal)', addressLocality: 'Bahu', addressRegion: 'Himachal Pradesh', postalCode: '175123', addressCountry: 'IN' }, aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '46' }, checkinTime: '12:00', checkoutTime: '10:00' }) }] }), component: Home });
+function Home() { return <main><section className="hero-home"><img className="hero-photo" src={exterior} alt="The wooden Dreams Villa A-frame cabins among green Himalayan hills in Bahu" fetchPriority="high"/><div className="hero-shade"/><div className="hero-home-content container-site"><p className="eyebrow light">BAHU, HIMACHAL PRADESH · NEAR JIBHI</p><h1>Stay Inside<br/>the Mountains.</h1><p className="hero-subtitle">An offbeat A-frame cabin with panoramic Himalayan views, peaceful surroundings and a truly private mountain escape.</p><div className="hero-actions"><BookingButton variant="light">Book your stay</BookingButton><Link className="hero-outline" to="/the-cabin">Explore the cabin <ArrowRight size={16}/></Link></div></div><span className="hero-side-note">DREAMS VILLA / HIMACHAL PRADESH</span><span className="scroll-indicator">SCROLL TO EXPLORE</span></section>
+<section className="section container-site intro-grid"><div><p className="eyebrow">A DIFFERENT PACE OF LIFE</p><h2 className="text-4xl md:text-5xl font-bold leading-tight">Your Private A-Frame Escape in Bahu</h2><p className="intro-copy">Dreams Villa A-Frame Cabin is a peaceful wooden retreat in Bahu (Lushal), near Jibhi. Surrounded by lush Himalayan greenery, it offers a quiet escape from commercial tourist areas with beautiful panoramic mountain and valley views.</p><div className="intro-list"><span>360° Valley Views</span><span>Wooden A-Frame Architecture</span><span>Private Balcony</span><span>Peaceful Location</span><span>Home-Style Food</span><span>Warm Local Hospitality</span></div><Link to="/about" className="text-link">Our story <ArrowRight size={16}/></Link></div><img className="intro-image" src={attic} alt="Warm wooden A-frame attic bedroom inside Dreams Villa" loading="lazy"/></section>
+<section className="full-photo"><img src={sunrise} alt="Pink Himalayan sunrise over the mountain valley near Bahu" loading="lazy"/><div className="shade"/><div className="full-photo-content container-site"><p className="eyebrow light">PANORAMIC MOUNTAIN DAYS</p><h2>Wake Up to<br/>the Himalayas.</h2><p>Enjoy panoramic mountain and valley views from your peaceful A-frame retreat.</p></div></section>
+<section className="section container-site"><SectionIntro eyebrow="A STAY TO REMEMBER" title="Everything you need. Nothing you don't." text="A simple, private mountain home that lets the landscape take centre stage."/><div className="editorial-grid"><Link to="/the-cabin" className="editorial-tile"><img src={exterior} alt="A-frame architecture surrounded by trees" loading="lazy"/><div className="tile-content"><p>01 / THE CABIN</p><h3>A home in the hills ↗</h3></div></Link><Link to="/stay" className="editorial-tile"><img src={bedroom} alt="Double bed and wooden interiors on the lower floor" loading="lazy"/><div className="tile-content"><p>02 / YOUR STAY</p><h3>Room to slow down ↗</h3></div></Link><Link to="/experiences" className="editorial-tile"><img src={balcony} alt="Mountain view from the cabin balcony" loading="lazy"/><div className="tile-content"><p>03 / THE MOMENTS</p><h3>Views worth lingering for ↗</h3></div></Link></div></section>
+<SplitSection image={landscape} alt="Rolling green Himalayan valley and mountains near Dreams Villa" eyebrow="YOUR OWN CORNER OF THE HIMALAYAS" title="A little further away. A lot closer to nature." reverse><p>Step out onto your private balcony. Watch the light move across the valley. Take your time over breakfast and let the mountains set the pace.</p><p>Whether you come for the quiet, the views or a few unhurried days together, the best part is simply being here.</p><Link to="/gallery" className="text-link">View the gallery <ArrowRight size={16}/></Link></SplitSection>
+<section className="section" style={{background:'var(--warm)'}}><div className="container-site"><SectionIntro eyebrow="THE LITTLE DETAILS" title="Comfort, with the mountains in mind."/><div className="feature-grid"><div className="feature-card"><Mountain size={26}/><h3>Mountain views</h3><p>Panoramic Himalayan scenery and a private balcony.</p></div><div className="feature-card"><Coffee size={26}/><h3>Home-style dining</h3><p>Fresh on-site meals and complimentary breakfast.</p></div><div className="feature-card"><Wifi size={26}/><h3>Thoughtful comforts</h3><p>Free Wi-Fi, parking and heating on request.</p></div></div><Link to="/stay" className="text-link">Explore your stay <ArrowRight size={16}/></Link></div></section>
+<AccessNote/><ClosingCTA/></main> }
